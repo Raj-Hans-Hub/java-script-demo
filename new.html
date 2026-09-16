@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<h2>Assignment 1: Password Strength Checker</h2>
+
+<input type="text" id="Password"><button id="passbtn">Check Password</button>
+<h2 id="passmsg"></h2>
+
+<h2>Assignment 2: Simple Calculator</h2>
+<input type="number" id="onebox">
+<input type="number" id="twobox">
+<h2 id="calmsg"></h2>
+<button id="add">+</button>
+<button id="sub">-</button>
+<button id="multi">x</button>
+<button id="divi">/</button>
+
+<h2>Student Result Calculator</h2>
+
+<input type="text" placeholder="student name" id="student" >
+<input type="number" placeholder="english mark" id="english" >
+<input type="number" placeholder="hindi mark" id="hindi" >
+<input type="number" placeholder="math mark" id="math" >
+<input type="number" placeholder="science mark" id="science" >
+<input type="number" placeholder="computer mark" id="computer" >
+<button id="subbtn">submit</button>
+
+<div id="result_box">
+    
+</div>
+<!-- Assignment 7: Quiz Application -->
+ <h2>Assignment 7: Quiz Application</h2>
+
+ <div>
+    <h2>Which language is used for web development?</h2>
+    <span><input type="radio" name="a" value="0" class="ans1">Python</span>
+    <span><input type="radio" name="a" value="1" class="ans1">JavaScript</span>
+    <span><input type="radio" name="a" value="0" class="ans1">C++</span>
+    <span><input type="radio" name="a" value="0" class="ans1">Java</span>
+ </div>
+ <div>
+    <h2>Which language is used for web development?</h2>
+    <span><input type="radio" name="b" value="1" class="ans2">JavaScript</span>
+    <span><input type="radio" name="b" value="0" class="ans2">Python</span>
+    <span><input type="radio" name="b" value="0" class="ans2">C++</span>
+    <span><input type="radio" name="b" value="0" class="ans2">Java</span>
+ </div>
+ <div>
+    <h2>Which language is used for web development?</h2>
+    <span><input type="radio" name="c" value="0" class="ans3">Python</span>
+    <span><input type="radio" name="c" value="0" class="ans3">C++</span>
+    <span><input type="radio" name="c" value="1" class="ans3">JavaScript</span>
+    <span><input type="radio" name="c" value="0" class="ans3">Java</span>
+ </div>
+ <div>
+    <h2>Which language is used for web development?</h2>
+    <span><input type="radio" name="d" value="0" class="ans4">Python</span>
+    <span><input type="radio" name="d" value="0" class="ans4">C++</span>
+    <span><input type="radio" name="d" value="1" class="ans4">JavaScript</span>
+    <span><input type="radio" name="d" value="0" class="ans4">Java</span>
+ </div>
+ <div>
+    <h2>Which language is used for web development?</h2>
+    <span><input type="radio" name="e" value="0" class="ans5">Python</span>
+    <span><input type="radio" name="e" value="0" class="ans5">C++</span>
+    <span><input type="radio" name="e" value="0" class="ans5">Java</span>
+    <span><input type="radio" name="e" value="1" class="ans5">JavaScript</span>
+ </div>
+    
+
+ <button onclick="next()">Submit</button>
+
+<div id="ans_msg">
+
+</div>
+
+
+
+<!-- Assignment 8: Employee Salary Calculator -->
+ <h2>Assignment 8: Employee Salary Calculator</h2>
+
+<input type="text" placeholder="Employee Name" id="Employee_Name" >
+<input type="number" placeholder="Basic Salary" id="Basic_Salary" >
+<input type="number" placeholder="Hra" id="hra" >
+<input type="number" placeholder="Da" id="da" >
+<input type="number" placeholder="Bonus" id="Bonus" >
+
+<button onclick="Gross_Salary()">submit</button>
+
+<div id="result_Gross_Salary">
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- // Assignment 10: Expense Tracker -->
+  <h2>Assignment 10: Expense Tracker</h2>
+<input type="text" placeholder="Expense name" id="Expense" >
+<input type="number" placeholder="Expense Amount" id="Expense_Amount" >
+<select name="" id="Category_dropdown">
+    <option value="Food">Food</option>
+    <option value="Travel">Travel</option>
+    <option value="Shopping">Shopping</option>
+    <option value="Bills">Bills</option>
+    <option value="Other">Other</option>
+</select>
+<button onclick="Expense_Tracker();">Expense Tracker</button>
+
+<h3 id="total">total : 0</h3>
+<div id="result_Expense_Amount">
+    
+        
+    
+</div>
+
+
+<script>
+    // Assignment 1: Password Strength Checker
+    let Password = document.getElementById("Password")
+    let passmsg = document.getElementById("passmsg")
+    let Passbtn = document.querySelector("#passbtn");
+
+    Passbtn.addEventListener("click", () => {
+        if(Password.value.length === 0) return passmsg.innerText ="Please Enter your password"; 
+
+        if (Password.value.length < 6) {
+            passmsg.innerText = "Weak Password";
+            passmsg.style.color = "red";
+
+        }
+        else if (Password.value.length <= 9 && Password.value.length >= 6) {
+            passmsg.innerText = "Medium Password";
+            passmsg.style.color = "orange";
+
+        }
+        else if (Password.value.length >=10) {
+            passmsg.innerText = "Strong Password";
+            passmsg.style.color = "green";
+
+        }
+    })
+
+
+// Assignment 2: Simple Calculator
+ 
+  
+let onebox = document.getElementById("onebox");
+let twobox = document.getElementById("twobox");
+let calmsg = document.getElementById("calmsg");
+let add = document.getElementById("add");
+let sub = document.getElementById("sub");
+let muli = document.getElementById("multi");
+let divi = document.getElementById("divi");
+
+add.addEventListener("click",()=>{
+    let a =parseInt(onebox.value);
+    let b =parseInt(twobox.value);
+    
+    calmsg.innerHTML=a+b ;
+
+})
+
+sub.addEventListener("click",()=>{
+    let a =parseInt(onebox.value);
+    let b =parseInt(twobox.value);
+    
+    calmsg.innerHTML=a-b ;
+
+})
+muli.addEventListener("click",()=>{
+    let a =parseInt(onebox.value);
+    let b =parseInt(twobox.value);
+    
+    calmsg.innerHTML=a*b ;
+
+})
+divi.addEventListener("click",()=>{
+    let a =parseInt(onebox.value);
+    let b =parseInt(twobox.value);
+    
+    calmsg.innerHTML=a/b ;
+
+})
+
+// Student Result Calculator
+ 
+
+subbtn.addEventListener("click",()=>{
+    
+    let english = document.getElementById("english").value;
+    let student = document.getElementById("student").value;
+    let hindi = document.getElementById("hindi").value;
+    let math = document.getElementById("math").value;
+    let science = document.getElementById("science").value;
+    let computer = document.getElementById("computer").value;
+    let subbtn = document.getElementById("subbtn").value;
+    let result_box = document.getElementById("result_box");
+   
+    let marks = parseInt(english)+parseInt(hindi)+parseInt(math)+parseInt(science)+parseInt(computer)
+
+    let percentage = marks/5;
+    let  grad =grade(percentage)
+
+console.log(marks);
+console.log(percentage);
+
+result_box.innerHTML=`
+ 
+<li>student name : ${student}</li>
+    <li>Marks : ${marks}</li>
+    <li>percentage : ${percentage}%</li>
+    <li>grade : ${grad}</li>
+`;
+
+
+function grade(percentage) {
+    
+    if (percentage >= 90) {
+
+        return "A+ , Pass"
+        
+    }
+    
+   else if (percentage >= 80 &&percentage < 90) {
+
+        return "A , Pass"
+        
+    }
+   else if (percentage >= 70 &&percentage < 80) {
+
+        return "B , Pass"
+        
+    }
+   else if (percentage >= 60 &&percentage < 70) {
+
+        return "C , Pass"
+        
+    }
+   else if (percentage >= 50 &&percentage < 60) {
+
+        return "D , Pass"
+        
+    }
+    
+    else{
+        
+        return "Fail"
+
+    }
+    
+}
+
+
+
+
+
+})
+
+// Assignment 7: Quiz Application
+
+function next() {
+ 
+  let ans1 =  document.querySelector(".ans1:checked").value;
+  let ans2 =  document.querySelector(".ans2:checked").value;
+  let ans3 =  document.querySelector(".ans3:checked").value;
+  let ans4 =  document.querySelector(".ans4:checked").value;
+  let ans5 =  document.querySelector(".ans5:checked").value;
+  let ans_msg =  document.querySelector("#ans_msg");
+   
+  let marks = parseInt(ans1)+parseInt(ans2)+parseInt(ans3)+parseInt(ans4)+parseInt(ans5);
+    
+    ans_msg.innerHTML =`
+      <li>Total Questions : 5</li>
+  <li>Correct Answers :${marks}</li>
+  <li>Wrong Answers :${5-marks}</li>
+  
+  <li>Excellent! You scored:${marks}/5</li>
+    
+    `;
+
+    
+    // let total = parseInt(ans1)+parseInt(ans2);
+    // alert(total);
+}
+
+
+
+//Assignment 8: Employee Salary Calculator
+
+function Gross_Salary() {
+    
+    let Employee_Name = document.getElementById("Employee_Name").value;
+    let Basic_Salary = document.getElementById("Basic_Salary").value;
+    let hra = document.getElementById("hra").value;
+    let da = document.getElementById("da").value;
+    let Bonus = document.getElementById("Bonus").value;
+
+
+    let result_box = document.getElementById("result_Gross_Salary");
+   
+    let Salary_gross = parseInt(Basic_Salary)+parseInt(hra)+parseInt(da)+parseInt(Bonus);
+
+   
+    let  taxs =tax(Salary_gross)
+    let Net_Salary = Salary_gross*(100-taxs)/100; 
+    console.log(Net_Salary);
+    
+    
+
+result_box.innerHTML=`
+ 
+<li>Employee_Name : ${Employee_Name}</li>
+    <li>Basic Salary : ${Basic_Salary}</li>
+    <li>Gross Salary : ${Salary_gross}</li>
+    <li>Tax: ${taxs}%</li>
+    <li>Net Salary : ${Net_Salary}</li>
+`;
+
+
+function tax(Salary_gross) {
+    
+    if (Salary_gross >= 80000) {
+        
+       return 15;
+        
+    
+        
+    }
+    
+   else if (Salary_gross>= 50000 &&Salary_gross < 80000) {
+
+        return 10;
+        
+    }
+   else if (Salary_gross >= 30000 &&Salary_gross < 50000) {
+
+        return 5;
+        
+    }
+   
+    
+    else{
+        
+        return 0;
+
+    }
+    
+}
+
+
+
+
+    
+}
+
+
+
+
+
+// Assignment 10: Expense Tracker
+
+let total = 0;
+function Expense_Tracker(){
+    
+    let Expense = document.getElementById("Expense").value;
+    let Expense_Amount = document.getElementById("Expense_Amount").value;
+    let Category_dropdown = document.getElementById("Category_dropdown").value;
+    let total_ex= document.getElementById("total");
+    let result_Expense_Amount = document.getElementById("result_Expense_Amount");
+    
+    total +=parseInt(Expense_Amount );
+    total_ex.innerHTML=`<h3 id="total">total : ${total}</h3>`;
+
+    
+    
+     result_Expense_Amount.innerHTML+=`
+      <div>
+        <li>Expense Name :${Expense}</li>
+        <li>Category :${Category_dropdown}</li>
+        <li>Amount :${Expense_Amount}</li>
+        <button onclick="this.parentElement.remove()">Delete button</button>
+    </div>
+     
+     `;
+
+
+    
+}
+
+
+
+</script>
+</body>
+
+</html>
